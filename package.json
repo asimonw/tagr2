@@ -1,9 +1,12 @@
 {
-  "name": "tagr",
+  "name": "tagr2",
   "version": "1.0.0",
   "description": "Tag anything",
   "author": "Alex Wijns <awijns@gmail.com>",
   "private": true,
+  "engines": {
+    "node": "8.9.x"
+  },
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
