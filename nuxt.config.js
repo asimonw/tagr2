@@ -1,7 +1,13 @@
 const nodeExternals = require('webpack-node-externals')
 const resolve = dir => require('path').join(__dirname, dir)
 
-const localConfig = require('./config/local')
+let localConfig
+
+try {
+  localConfig = require('./config/local')
+} catch (e) {
+  localConfig = null
+}
 
 module.exports = {
   /*
