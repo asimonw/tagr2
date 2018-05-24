@@ -30,6 +30,7 @@
 import axios from 'axios'
 
 export default {
+  middleware: ['check-auth', 'auth'],
   asyncData (context) {
     return axios.get(`${process.env.baseURL}people/${context.params.id}.json`)
       .then(res => ({ person: res.data }))

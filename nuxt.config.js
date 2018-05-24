@@ -39,7 +39,8 @@ module.exports = {
   ** Environment variables
   */
   env: {
-    baseURL: process.env.BASE_URL || localConfig.baseURL
+    baseURL: process.env.BASE_URL || localConfig.baseURL,
+    fbApiKey: process.env.FB_API_KEY || localConfig.fbApiKey
   },
   /*
   ** Build configuration
@@ -64,14 +65,14 @@ module.exports = {
     ** Run ESLint on save
     */
     extend(config, ctx) {
-      if (ctx.isDev && ctx.isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        })
-      }
+      // if (ctx.isDev && ctx.isClient) {
+      //   config.module.rules.push({
+      //     enforce: 'pre',
+      //     test: /\.(js|vue)$/,
+      //     loader: 'eslint-loader',
+      //     exclude: /(node_modules)/
+      //   })
+      // }
       if (ctx.isServer) {
         config.externals = [
           nodeExternals({

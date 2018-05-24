@@ -1,7 +1,7 @@
 <template>
   <v-layout row>
     <v-flex xs12 sm6 offset-sm3>
-      <v-list>
+      <v-list v-if="people">
         <template v-for="person in people">
           <v-list-tile :key="person.id" avatar @click.prevent="onClickPerson(person.id)">
             <v-list-tile-avatar>
@@ -21,7 +21,8 @@
 import axios from 'axios'
 
 export default {
-  asyncData () {
+  middleware: ['check-auth', 'auth'],
+  asyncData (context) {
     return axios.get(`${process.env.baseURL}people.json`)
       .then(res => {
         const data = Object.keys(res.data).reduce(
@@ -32,7 +33,7 @@ export default {
         )
         return { people: data }
       })
-      .catch(console.error)
+      .catch(err => ({ people: null }))
   },
   methods: {
     onClickPerson (id) {

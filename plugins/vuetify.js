@@ -12,7 +12,9 @@ import {
   VToolbar,
   VJumbotron,
   VAvatar,
-  VChip
+  VChip,
+  VForm,
+  VTextField
 } from 'vuetify'
 
 Vue.use(Vuetify, {
@@ -28,6 +30,8 @@ Vue.use(Vuetify, {
     VToolbar,
     VJumbotron,
     VAvatar,
-    VChip
+    VChip,
+    VForm,
+    VTextField
   }
 })
