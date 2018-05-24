@@ -11,7 +11,8 @@ import {
   VGrid,
   VToolbar,
   VJumbotron,
-  VAvatar
+  VAvatar,
+  VChip
 } from 'vuetify'
 
 Vue.use(Vuetify, {
@@ -26,6 +27,7 @@ Vue.use(Vuetify, {
     VGrid,
     VToolbar,
     VJumbotron,
-    VAvatar
+    VAvatar,
+    VChip
   }
 })
